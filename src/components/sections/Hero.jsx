@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { useContent } from "../../lib/useContent";
 
 export default function Hero() {
+  const { hero } = useContent();
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -13,7 +15,7 @@ export default function Hero() {
   return (
     <section id="hero" style={{ position: "relative", width: "100%", height: "100svh", minHeight: "600px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", overflow: "hidden", background: "#2a1f14" }}>
       <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
-        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80" alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        <img src={hero.backgroundImage} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         <div style={{ position: "absolute", inset: 0, background: "rgba(42,31,20,0.58)" }} />
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at center, transparent 35%, rgba(20,12,0,0.65) 100%)" }} />
       </div>
@@ -28,14 +30,14 @@ export default function Hero() {
         </div>
 
         <h1 style={{ fontFamily: "'Archivo', sans-serif", fontSize: "clamp(3rem, 9vw, 7rem)", fontWeight: 700, color: "#D4AF37", letterSpacing: "0.25em", textTransform: "uppercase", lineHeight: 1, margin: 0 }}>
-          Lagoplata
+          {hero.title}
         </h1>
         <p style={{ fontFamily: "'Archivo', sans-serif", fontSize: "clamp(0.6rem, 1.4vw, 0.85rem)", fontWeight: 400, color: "rgba(212,175,55,0.8)", letterSpacing: "0.55em", textTransform: "uppercase", marginTop: "12px" }}>
-          Micro&nbsp;Resort
+          {hero.subtitle}
         </p>
         <div style={{ width: "50px", height: "1px", background: "rgba(212,175,55,0.35)", margin: "32px auto" }} />
         <p style={{ fontFamily: "'Archivo', sans-serif", fontSize: "clamp(0.6rem, 1.3vw, 0.8rem)", fontWeight: 400, color: "rgba(212,175,55,0.75)", letterSpacing: "0.22em", textTransform: "uppercase" }}>
-          Luxury Cabins on Lagoplata Creek&nbsp;|&nbsp;Bryson City, NC
+          {hero.tagline}
         </p>
       </div>
 

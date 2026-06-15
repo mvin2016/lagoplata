@@ -1,42 +1,23 @@
 import { useState } from "react";
 import { useInView } from "../../lib/useInView";
+import { useContent } from "../../lib/useContent";
 import { t, sectionWrap, card, sectionTitle, sectionSub, bodyText, headingMd } from "../../tokens";
 
-const milestones = [
-  { date: "May 2025",           label: "Pre-Construction Begins" },
-  { date: "August 2025",        label: "Construction Start" },
-  { date: "Sept 2025 – Feb 2026", label: "Vertical Build Staggered" },
-  { date: "Jan – March 2026",   label: "Interior Finish & Landscaping" },
-  { date: "April 2026",         label: "Soft Launch" },
-  { date: "May 2026",           label: "Full Launch" },
-  { date: "Q2 2026 – Q1 2027",  label: "Stabilization Period" },
-  { date: "Q1 – Q3 2027",       label: "Refi or Sale Window" },
-];
-
-const gantt = [
-  { label: "Pre-Construction", start: 0,  duration: 3 },
-  { label: "Construction",     start: 3,  duration: 6 },
-  { label: "Interior &\nLandscaping", start: 8, duration: 3 },
-  { label: "Soft Launch",      start: 11, duration: 1 },
-  { label: "Full Launch",      start: 12, duration: 1 },
-  { label: "Stabilization",    start: 13, duration: 9 },
-  { label: "Exit Window",      start: 20, duration: 9 },
-];
-const TOTAL = 32;
-
 export default function Timeline() {
+  const { timeline: data } = useContent();
+  const { milestones, gantt, ganttTotal: TOTAL } = data;
   const [ref, inView] = useInView();
   const [tooltip, setTooltip] = useState(null);
 
   return (
     <section id="timeline" ref={ref} className={`fade-up${inView ? " in-view" : ""}`} style={sectionWrap}>
       <div style={{ textAlign: "center", marginBottom: "48px" }}>
-        <h2 style={sectionTitle}>Development Timeline</h2>
-        <p style={sectionSub}>Lagoplata Micro Resort | Key Milestones to Launch and Exit</p>
+        <h2 style={sectionTitle}>{data.title}</h2>
+        <p style={sectionSub}>{data.subtitle}</p>
       </div>
       <div style={card}>
-        <p style={{ ...bodyText, marginBottom: "8px" }}>Bryson City's strategic location draws short-stay guests from across the Southeast. Year-round demand anchors the property's high occupancy potential.</p>
-        <p style={{ ...bodyText, marginBottom: "32px" }}>A strategic 12-month construction timeline staggered across six cabins ensures efficient resource allocation and progress tracking. A 24-month interest-only loan term provides buffer and flexibility.</p>
+        <p style={{ ...bodyText, marginBottom: "8px" }}>{data.intro1}</p>
+        <p style={{ ...bodyText, marginBottom: "32px" }}>{data.intro2}</p>
 
         {/* Milestone cards grid */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "12px", marginBottom: "40px" }}>
@@ -82,8 +63,8 @@ export default function Timeline() {
             })}
             {/* X axis */}
             <div style={{ marginLeft: "110px", display: "flex", justifyContent: "space-between", paddingTop: "8px", borderTop: `1px solid ${t.border}` }}>
-              {[0,8,16,24,32].map(tick => (
-                <span key={tick} style={{ fontFamily: t.font, fontSize: "0.7rem", color: t.muted }}>{tick}</span>
+              {[0, 0.25, 0.5, 0.75, 1].map(f => (
+                <span key={f} style={{ fontFamily: t.font, fontSize: "0.7rem", color: t.muted }}>{Math.round(f * TOTAL)}</span>
               ))}
             </div>
           </div>
