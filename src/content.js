@@ -36,7 +36,7 @@ export const content = {
       { label: "Total Project Cost", value: "$3.51M" },
       { label: "Senior Debt (7.5% / 25yr)", value: "$2.457M (70% LTC)" },
       { label: "Equity Raise", value: "$1.053M" },
-      { label: "Entity", value: "Lago Plata Properties LLC" },
+      { label: "Entity", value: "Chappell Point LLC" },
     ],
     marketAdvantage: [
       "14 distinct units across two typologies — structural cabins and Airstream suites — on a wooded Somervell County parcel",
@@ -397,7 +397,7 @@ export const content = {
       {
         name: "Michael Vinson",
         role: "Sponsor",
-        bio: "Texas-licensed attorney and active real estate investor. Operates a growing STR portfolio including Living Waters on Lake Granbury. Partner in Lago Plata Properties, Dos V Legacy, and Alliance Land Resources. Deep background in mineral acquisition, land, and alternative asset underwriting.",
+        bio: "Texas-licensed attorney and active real estate investor. Operates a growing STR portfolio including Living Waters on Lake Granbury. Partner in Chappell Point LLC, Dos V Legacy, and Alliance Land Resources. Deep background in mineral acquisition, land, and alternative asset underwriting.",
         image: "",
         initials: "MV",
       },
@@ -427,7 +427,7 @@ export const content = {
     intro2:
       "Questions about the deal, timeline, or a site visit? We're ready to move.",
     contactName: "Michael Vinson, Sponsor",
-    email: "info@lagoplata.com",
+    email: "info@chappellpoint.com",
     phone: "682-500-1786",
   },
 };
