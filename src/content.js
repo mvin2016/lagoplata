@@ -396,7 +396,7 @@ export const content = {
     members: [
       {
         name: "Michael Vinson",
-        role: "Sponsor & Managing Partner",
+        role: "Sponsor",
         bio: "Texas-licensed attorney and active real estate investor. Operates a growing STR portfolio including Living Waters on Lake Granbury. Partner in Lago Plata Properties, Dos V Legacy, and Alliance Land Resources. Deep background in mineral acquisition, land, and alternative asset underwriting.",
         image: "",
         initials: "MV",
@@ -426,7 +426,7 @@ export const content = {
       "With an experienced operator, conservative underwriting, and a strong Texas Hill Country location, Chappell Point is built to deliver solid investor returns and a guest experience worth coming back to. We'd love to have you involved in building the next standout destination in the Texas outdoor hospitality market.",
     intro2:
       "Questions about the deal, timeline, or a site visit? We're ready to move.",
-    contactName: "Michael Vinson, Managing Partner",
+    contactName: "Michael Vinson, Sponsor",
     email: "info@lagoplata.com",
     phone: "682-500-1786",
   },
