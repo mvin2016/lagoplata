@@ -20,7 +20,7 @@ export const content = {
   ],
 
   hero: {
-    backgroundImage: "/images/aerial.jpg",
+    backgroundImage: "/aerial.jpg",
     title: "Chappell Point",
     subtitle: "Micro Resort",
     tagline:
@@ -65,8 +65,8 @@ export const content = {
     title: "The Chappell Point Concept",
     subtitle:
       "Two typologies. One unforgettable experience — where Hill Country landscape meets elevated design.",
-    cabinRenderImage: "/images/cabin-render.jpg",
-    siteMapImage: "/images/site-map.jpg",
+    cabinRenderImage: "/cabin-render.jpg",
+    siteMapImage: "/site-map.jpg",
     paragraphs: [
       "Chappell Point is a 14-unit luxury micro resort compound in Somervell County, Texas. The property features 11 high-design structural cabins and 3 curated Airstream suites, each with private outdoor living spaces, hotel-grade finishes, and thoughtfully chosen amenity packages.",
       "Shared resort amenities — including a pool, event pavilion, and fire pit commons — create a compound experience that goes well beyond the individual cabin. This positions Chappell Point for both leisure guests and private event bookings.",
